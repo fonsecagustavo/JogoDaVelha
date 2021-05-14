@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         square.addEventListener('click', handleClick);
     })
 
-    let buttonReiniciar = document.querySelector("button");
-    buttonReiniciar.addEventListener('click',reiniciarGame);
+    let buttonRestart = document.querySelector("button");
+    buttonRestart.addEventListener('click',restartGame);
 
 })
 
@@ -21,10 +21,10 @@ function handleClick (event) {
         setTimeout(()=>{
             alert("O jogo acabou - Vencedor foi jogador " + symbols[playerTime]  )
         },10)
-        mudarPlacar();
+        changeScoreboard();
     }
     updateSquare(position);
-    mudarJogador();
+    changePlayer();
     
 }
 
@@ -46,7 +46,7 @@ function updateSquares(){
         }
     })
 }
-function reiniciarGame() {
+function restartGame() {
     board = ['','','','','','','','',''];
     playerTime = 0;
     gameOver = false;
@@ -54,7 +54,7 @@ function reiniciarGame() {
     updateSquares();
 }
 
-function mudarJogador() {
+function changePlayer() {
     let h2 = document.getElementById("jogador");
     
     if(playerTime == 0){
@@ -64,10 +64,10 @@ function mudarJogador() {
     }
 }
 
-function mudarPlacar() {
-    let jogador0 = document.getElementById("jogador0");
-    let jogador1 = document.getElementById("jogador1");
+function changeScoreboard() {
+    let player0 = document.getElementById("player0");
+    let player1 = document.getElementById("player1");
 
-    jogador0.innerHTML = `${placar[0]}`
-    jogador1.innerHTML = `${placar[1]}`
+    player0.innerHTML = `${scoreboard[0]}`
+    player1.innerHTML = `${scoreboard[1]}`
 }

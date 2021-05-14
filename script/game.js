@@ -4,7 +4,7 @@ let board = ['','','','','','','','',''];
 let playerTime = 0;
 let symbols = ['O','X'];
 let gameOver = false;
-let placar = [0,0];
+let scoreboard = [0,0];
 
 let winStates = [
     [0,1,2],
@@ -31,7 +31,7 @@ function handleMove (position) {
         if(!gameOver){
             playerTime = (playerTime == 0) ? 1 : 0;
         }else{
-            placar[playerTime]++;
+            scoreboard[playerTime]++;
         }
     }
 
